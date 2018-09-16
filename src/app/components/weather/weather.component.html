@@ -1,0 +1,41 @@
+<h1 class="app-name">What’s the weather like?</h1>
+<form class="example-form" [formGroup]="weatherForm" (ngSubmit)="getWeather()">
+	<div class="containerX">
+		<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex
+		class="coloredContainerX box" fxLayoutAlign="space-around center">
+		<div fxFlex> 
+			<mat-form-field class="form-field example-full-width">
+				<input type="text" placeholder="Choose city/province" aria-label="Number" matInput formControlName="city" [matAutocomplete]="auto" required>
+				<mat-autocomplete #auto="matAutocomplete">
+					<mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+						{{option.name}}
+					</mat-option>
+				</mat-autocomplete>
+			</mat-form-field>
+		</div>
+		<div fxFlex="5"></div>
+		<div fxFlex>
+			<mat-form-field class="form-field">
+				<input matInput [matDatepicker]="picker1" placeholder="Choose date" formControlName="date" required>
+				<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+				<mat-datepicker #picker1></mat-datepicker>
+			</mat-form-field>
+		</div>
+		<div fxFlex="5"></div>
+		<div fxFlex fxLayoutAlign="start center">
+			<button mat-raised-button type="submit" [disabled]="!weatherForm.valid">Get Weather</button>
+		</div>
+	</div>
+</div>
+
+
+</form>
+<div class="result">
+	<div class="containerX">
+		<mat-spinner *ngIf="isLoading"></mat-spinner>
+		<div *ngIf="!isLoading">
+			<div *ngIf="error_message">{{error_message}}</div>
+			<app-city-card [weather]="weatherData" *ngIf="weatherData"></app-city-card>
+		</div>
+	</div>
+</div>

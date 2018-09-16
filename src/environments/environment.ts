@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  appId: '4dfcc82d16b02931f1a1060b03828f29',
+  baseUrl: 'http://api.openweathermap.org/data/2.5/', 
+  units:'metric',
+  darkSkyId: '5c75672fef1e54e6a516e5bc4bbe0b6c',
+  weatherUrl: 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast',
+  geoCodingId: 'AIzaSyAYrCfXjWEHQabkXo5nEV0D2D0l5uWv8kQ'
 };
 
 /*

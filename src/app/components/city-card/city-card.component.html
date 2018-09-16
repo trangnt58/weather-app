@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+  <mat-card-header>
+     <div mat-card-avatar class="example-header-image">
+       <img src="{{imageUrl}}">
+     </div>
+    <mat-card-title>{{weather.address}}</mat-card-title>
+    <mat-card-subtitle>{{weather.summary}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+  <p>Max Temperature: {{weather.temperatureMax | f2c}} </p>
+    <p>Min Temperature: {{weather.temperatureMin | f2c}} </p>
+    <p>Humidity: {{weather.humidity}}</p>
+  </mat-card-content>
+</mat-card>
