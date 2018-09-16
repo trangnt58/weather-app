@@ -11,7 +11,6 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './components/weather/weather.component';
-import { WeatherSearchComponent } from './components/weather-search/weather-search.component';
 import { CityCardComponent } from './components/city-card/city-card.component';
 import { FahrenheitCelsiusPipe } from './pipes/fahrenheit-celsius.pipe';
 import {MatCardModule} from '@angular/material/card';
@@ -24,7 +23,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   declarations: [
     AppComponent,
     WeatherComponent,
-    WeatherSearchComponent,
     CityCardComponent,
     FahrenheitCelsiusPipe
   ],
